@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Cristian</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="site">
+    <header>
+      <div class="brand">
+        <div class="logo">TN</div>
+        <div>
+          <div style="font-weight:700">Tu Nombre</div>
+          <div style="font-size:13px;color:var(--muted)">Desarrollador · Diseñador</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="intro card">
+          <h1>Hola — soy Tu Nombre</h1>
+          <p>Construyo interfaces limpias y aplicaciones web. Me especializo en front‑end, accesibilidad y rendimiento.</p>
+          <a class="cta" href="#proyectos">Ver proyectos</a>
+
+          <div class="two-col" style="margin-top:16px">
+            <div class="card">
+              <strong>Rol actual</strong>
+              <div style="color:var(--muted);margin-top:6px">Desarrollador Frontend — Freelance</div>
+            </div>
+            <div class="card">
+              <strong>Ubicación</strong>
+              <div style="color:var(--muted);margin-top:6px">Madrid, España</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin-top:0">Contacto rápido</h3>
+          <p style="color:var(--muted);margin-bottom:12px">Email — <a href="mailto:tu@correo.com" style="color:var(--accent);text-decoration:none">tu@correo.com</a></p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <a class="card" style="padding:8px;text-decoration:none;">Resume</a>
+            <a class="card" style="padding:8px;text-decoration:none;">LinkedIn</a>
+            <a class="card" style="padding:8px;text-decoration:none;">GitHub</a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="proyectos">
+        <h2 style="margin:0 0 10px">Proyectos</h2>
+        <div class="projects">
+          <article class="project card">
+            <div class="thumb">Proyecto 1</div>
+            <div class="body">
+              <h3>Landing responsive</h3>
+              <p>Landing page para producto SaaS con animaciones y optimización LCP.</p>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div class="thumb">Proyecto 2</div>
+            <div class="body">
+              <h3>App de tareas</h3>
+              <p>Aplicación PWA con sincronización offline y autenticación.</p>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div class="thumb">Proyecto 3</div>
+            <div class="body">
+              <h3>Dashboard</h3>
+              <p>Dashboard analítico con gráficos y filtros dinámicos.</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="sobre-mi" style="margin-top:22px">
+        <h2>Sobre mí</h2>
+        <div class="two-col">
+          <div class="card">
+            <p style="margin:0;color:var(--muted)">Soy un desarrollador centrado en resolver problemas mediante interfaces limpias. Me gusta escribir código mantenible, probar accesibilidad y mejorar la experiencia de usuario.</p>
+            <ul style="margin-top:12px;color:var(--muted);padding-left:18px">
+              <li>HTML / CSS / JavaScript</li>
+              <li>React / Vue</li>
+              <li>Testing, CI/CD</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4 style="margin:0 0 8px">Habilidades</h4>
+            <div style="color:var(--muted)">
+              <div>UX &middot; Accesibilidad &middot; Performance</div>
+              <div style="margin-top:8px">Herramientas: Figma, Git, Vite</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" style="margin-top:22px">
+        <h2>Contacto</h2>
+        <div class="card">
+          <form onsubmit="event.preventDefault(); alert('Formulario simulado — reemplaza con tu backend');">
+            <input type="text" placeholder="Tu nombre" required />
+            <input type="email" placeholder="tu@correo.com" required />
+            <textarea rows="4" placeholder="Mensaje"></textarea>
+            <div style="display:flex;justify-content:flex-end;margin-top:8px">
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Tu Nombre</div>
+      <div style="color:var(--muted)">Hecho con ❤️ — Disponible para nuevos proyectos</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -3,7 +3,8 @@
 FROM httpd:2.4
 #directorio de trabajo dentro del contenedor
 WORKDIR /usr/local/apache2/htdocs
-#Copiamos los archivos de src al contenedor, al directorio de trabajo
-COPY ../src/ .
+#Copiamos los archivos de src al directorio de trabajo del contenedor
+#el directorio . se refiere al contexto en docker-compose.yml que seria portfolio
+COPY ./src/ .
 #Puerto en que escucha el contenedor
 EXPOSE 80

@@ -8,8 +8,7 @@ RUN apt update && apt install -yq --no-install-recommends \
     # libapache2-mod-php7.2 \
     nano \
     curl \
-    net-tools \
-    iputils-ping
+    net-tools iputils-ping
 #Creacion de usuario
 RUN useradd -rm -d /home/${usuario} -s /bin/bash ${usuario}
 #cambio de contraseña usuario:contraseña

@@ -4,7 +4,7 @@ services:
       context: ..
       dockerfile: ./deploy/dockerfile
       args: #variables de entorno para el dockerfile
-        - usuario=chinchilla
+        - USUARIO=chinchilla
     container_name: portfolio_web
     ports:
       - "8800:80"

@@ -4,11 +4,11 @@ FROM ubuntu
 ARG USUARIO
 #Instalacion
 RUN apt update && apt install -yq --no-install-recommends \
-    apache2 \
-    # libapache2-mod-php7.2 \
-    nano \
-    curl \
-    net-tools iputils-ping
+     apache2 \
+     nano \
+     curl \
+     net-tools iputils-ping
+     
 #Creacion de usuario
 RUN useradd -rm -d /home/${USUARIO} -s /bin/bash ${USUARIO}
 #cambio de contraseña usuario:contraseña

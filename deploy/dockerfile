@@ -1,6 +1,7 @@
 #Archivo donde especifique la instalacion de librerias y configuracion a la hora de crear mis contenedores personalizados.
 #La imagen desde la que partimos osea la base
 FROM ubuntu
+#Instalacion
 RUN apt update && apt install -yq --no-install-recommends \
     apache2 \
     # libapache2-mod-php7.2 \
@@ -8,6 +9,10 @@ RUN apt update && apt install -yq --no-install-recommends \
     curl \
     net-tools \
     iputils-ping
+#Creacion de usuario
+RUN useradd -rm -d /home/usuario -s /bin/bash usuario
+#cambio de contraseña
+RUN echo 'usuario:usuario' | chpasswd
 #directorio de trabajo dentro del contenedor
 WORKDIR /var/www/html
 #Copiamos los archivos de src al directorio de trabajo del contenedor
@@ -15,5 +20,5 @@ WORKDIR /var/www/html
 COPY ./src/ .
 #Puerto en que escucha el contenedor
 EXPOSE 80
-
+#Comando que se ejecuta al iniciar el contenedor
 CMD apachectl -DFOREGROUND

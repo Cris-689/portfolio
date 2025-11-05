@@ -1,24 +1,29 @@
-#Archivo donde especifique la instalacion de librerias y configuracion a la hora de crear mis contenedores personalizados.
-#La imagen desde la que partimos osea la base
-FROM ubuntu
+#partimos de una imagen base de ubuntu donde instalaremos apache, configuraremos y arrancaremos
+FROM ubuntu 
 ARG USUARIO
-#Instalacion
+ARG PASSWORD
 RUN apt update && apt install -yq --no-install-recommends \
      apache2 \
      nano \
      curl \
      net-tools iputils-ping
-     
-#Creacion de usuario
+
+#Cofiguracion Base:
+# - 
+#     
+#Configuracion del Servicio:
+
+# *** Creacion de usuarios *****
+# comandos interactivos (piden datos por terminal)
+# compandos por lotes (datos los ponemos como parametrosl del comando)
 RUN useradd -rm -d /home/${USUARIO} -s /bin/bash ${USUARIO}
-#cambio de contraseña usuario:contraseña
-RUN echo "${USUARIO}:usuario" | chpasswd
+RUN echo "${USUARIO}:${PASSWORD}" | chpasswd
+RUN echo "Bienvenido ${USUARIO} a la empresa" > /home/${USUARIO}/hello.txt  
+#debemos consultar el docker hub (imagen) para ver variables de entorno
+#directorios de trabajo etc etc
 #directorio de trabajo dentro del contenedor
 WORKDIR /var/www/html
-#Copiamos los archivos de src al directorio de trabajo del contenedor
-#el directorio . se refiere al contexto en docker-compose.yml que seria portfolio
-COPY ./src/ .
-#Puerto en que escucha el contenedor
+# el directorio . es relativo al contexto del Docker
+COPY ./src .
 EXPOSE 80
-#Comando que se ejecuta al iniciar el contenedor
 CMD apachectl -DFOREGROUND

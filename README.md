@@ -140,7 +140,7 @@ services:
 ### ▶️ Iniciar los contenedores
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
 ### ⏹️ Detener y eliminar los contenedores

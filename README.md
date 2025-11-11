@@ -146,7 +146,7 @@ docker compose up -d --build
 ### ⏹️ Detener y eliminar los contenedores
 
 ```bash
-docker compose down
+docker compose down --rmi all
 ```
 
 ---

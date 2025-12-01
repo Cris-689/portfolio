@@ -1,8 +1,0 @@
-services:
-  web:
-    image: nginx:latest
-    container_name: portfolio_web
-    ports:
-      - "8800:80"
-    volumes:
-      - ./../src:/usr/share/nginx/html:ro
